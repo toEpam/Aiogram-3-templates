@@ -1,14 +1,17 @@
 import asyncio
 import logging
 import sys
+import handlers
+import betterlogging as bl
 from aiogram import Bot
 from aiogram.enums import ParseMode
-import handlers
+
 from data.config import BOT_TOKEN
 from loader import dp
 from utils import on_startup_notify
-from utils.set_bot_commands import set_default_commands
-import betterlogging as bl
+from utils.set_bot_commands import set_commands
+
+
 def setup_logging():
     """
     Set up logging configuration for the application.
@@ -36,16 +39,17 @@ def setup_logging():
 
 
 async def main() -> None:
-    setup_logging()
+    # setup_logging()
 
     bot = Bot(BOT_TOKEN, parse_mode=ParseMode.HTML)
-    await dp.start_polling(bot)
 
     # Birlamchi komandalar (/star va /help)
-    await set_default_commands(dp)
+    await set_commands(bot)
 
     # Bot ishga tushgani haqida adminga xabar berish
-    await on_startup_notify(dp)
+    await on_startup_notify()
+    await dp.start_polling(bot)
+
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
