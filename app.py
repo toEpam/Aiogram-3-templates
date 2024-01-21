@@ -11,7 +11,7 @@ from loader import dp
 from utils import on_startup_notify
 from utils.set_bot_commands import set_commands
 
-
+################################################################
 def setup_logging():
     """
     Set up logging configuration for the application.
