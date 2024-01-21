@@ -1,4 +1,4 @@
-from . import errors
+from . import logs
 from . import users
 from . import groups
 from . import channels

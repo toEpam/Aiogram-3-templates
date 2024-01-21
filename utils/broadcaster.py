@@ -8,11 +8,11 @@ from aiogram.types import InlineKeyboardMarkup
 
 
 async def send_message(
-    bot: Bot,
-    user_id: Union[int, str],
-    text: str,
-    disable_notification: bool = False,
-    reply_markup: InlineKeyboardMarkup = None,
+        bot: Bot,
+        user_id: Union[int, str],
+        text: str,
+        disable_notification: bool = False,
+        reply_markup: InlineKeyboardMarkup = None,
 ) -> bool:
     """
     Safe messages sender
@@ -52,11 +52,11 @@ async def send_message(
 
 
 async def broadcast(
-    bot: Bot,
-    users: list[Union[str, int]],
-    text: str,
-    disable_notification: bool = False,
-    reply_markup: InlineKeyboardMarkup = None,
+        bot: Bot,
+        users: list[Union[str, int]],
+        text: str,
+        disable_notification: bool = False,
+        reply_markup: InlineKeyboardMarkup = None,
 ) -> int:
     """
     Simple broadcaster.
@@ -71,7 +71,7 @@ async def broadcast(
     try:
         for user_id in users:
             if await send_message(
-                bot, user_id, text, disable_notification, reply_markup
+                    bot, user_id, text, disable_notification, reply_markup
             ):
                 count += 1
             await asyncio.sleep(
