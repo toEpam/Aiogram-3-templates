@@ -36,7 +36,7 @@ def setup_logging():
 
 
 async def main() -> None:
-    # setup_logging()
+    setup_logging()
 
     bot = Bot(BOT_TOKEN, parse_mode=ParseMode.HTML)
     await dp.start_polling(bot)
