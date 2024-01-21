@@ -1,9 +1,10 @@
+from aiogram import Router
 from aiogram.types import Message
 
-from loader import dp
+echo_router = Router()
 
 
-@dp.message()
+@echo_router.message()
 async def echo_handler(message: Message) -> None:
     try:
         # Send a copy of the received message

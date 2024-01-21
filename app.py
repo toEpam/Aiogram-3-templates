@@ -3,12 +3,11 @@ import asyncio
 from aiogram import Bot
 from aiogram.enums import ParseMode
 
-from data.config import BOT_TOKEN
-from handlers.logs.log_handler import setup_logging
+from bot.data import BOT_TOKEN
+from bot.handlers import setup_logging
 from loader import dp
-from utils import on_startup_notify
-from utils.set_bot_commands import set_commands
-import handlers
+from bot.utils import on_startup_notify
+from bot.utils.set_bot_commands import set_commands
 
 
 async def main() -> None:

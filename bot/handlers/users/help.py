@@ -1,10 +1,10 @@
 from aiogram import types
 from aiogram.filters import Command
 
-from loader import dp
+from bot.handlers.users.start import command_router
 
 
-@dp.message(Command('help'))
+@command_router.message(Command('help'))
 async def bot_help(message: types.Message):
     text = ("Buyruqlar: ",
             "/start - Botni ishga tushirish",
