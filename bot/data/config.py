@@ -8,3 +8,4 @@ env.read_env()
 BOT_TOKEN = env.str("BOT_TOKEN")  # Bot token
 ADMINS = env.list("ADMINS")  # list of admins
 IP = env.str("ip")  # Host ip address
+PROVIDER_TOKEN = env.str("PROVIDER_TOKEN")
