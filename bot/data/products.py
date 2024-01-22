@@ -10,12 +10,8 @@ ds_praktikum = Product(
     prices=[
         LabeledPrice(
             label='Praktikum',
-            amount=15000, #150.00$
-        ),
-        LabeledPrice(
-            label='Chegirma',
-            amount=-1000, #-10.00$
-        ),
+            amount=100, #150.00$
+        )
     ],
     start_parameter="create_invoice_ds_praktikum",
     photo_url='https://i.imgur.com/vRN7PBT.jpg',
