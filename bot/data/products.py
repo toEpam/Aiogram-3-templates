@@ -6,11 +6,11 @@ from bot.utils.misc.product import Product
 ds_praktikum = Product(
     title="Data Science va Sun'iy intellekt",
     description="Kursga to'lov qilish uchun quyidagi tugmani bosing.",
-    currency="USD",
+    currency="UZS",
     prices=[
         LabeledPrice(
             label='Praktikum',
-            amount=100, #150.00$
+            amount=1.5*1000*1000*100, #150.00$
         )
     ],
     start_parameter="create_invoice_ds_praktikum",
@@ -26,7 +26,7 @@ ds_praktikum = Product(
 python_book = Product(
     title="Pythonda Dasturlash Asoslari",
     description="Kitobga to'lov qilish uchun quyidagi tugmani bosing.",
-    currency="USD",
+    currency="UZS",
     prices=[
         LabeledPrice(
             label='Kitob',
