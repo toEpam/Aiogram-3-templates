@@ -6,7 +6,7 @@ from bot.handlers.users.menu import menu_router
 from bot.handlers.users.start import start_router
 
 routers_list = [
-    # admin_router,
+    admin_router,
     start_router,
     help_router,
     menu_router,

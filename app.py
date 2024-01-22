@@ -22,7 +22,7 @@ async def main() -> None:
 
     # Bot ishga tushgani haqida adminga xabar berish
     await on_startup_notify()
-    # await bot.delete_webhook(drop_pending_updates=True)
+    await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
 
 
