@@ -1,6 +1,6 @@
 from aiogram import F, Router
 from aiogram.filters import Command
-from aiogram.types import InputFile, Message, FSInputFile
+from aiogram.types import InputFile, Message, FSInputFile, InputMediaPhoto
 from aiogram.utils.media_group import MediaGroupBuilder
 
 from loader import bot
@@ -36,10 +36,20 @@ async def send_book(message: Message):
 async def send_courses(message: Message):
     media_group = MediaGroupBuilder()
     photo1 = "https://i1.wp.com/mohirdev.uz/wp-content/uploads/Telegram-bot.png"
-    photo2 = InputFile(filename="./media/images/algoritm.png")
+    # photo2 = FSInputFile("/media/images/algoritm.png")
     photo3 = "AgACAgIAAxkBAAEYSIRlrlKZuq62fZDh5mc8w9oBP174egACSs8xG5FfeUkfo12lWIhSEAEAAwIAA3gAAzQE"
     video = "BQACAgIAAxkBAAEYSIllrlM_qgGdxLG8MGK5O9BbQ_DgUgAC4jwAApFfeUnQMpGuXu2X-DQE"
-    media_group.add_photo(photo1)
-    media_group.add_photo(photo2)
-    media_group.add_video(video=video, caption="Bizning online kurslarimiz")
+    # InputMediaPhoto(media=photo2)
+    # media_group.add_photo(media=photo1)
+    # media_group.add_photo(media=photo2)
+    # media_group.add_video(media=video, caption="Bizning online kurslarimiz")
+
+    media_group = MediaGroupBuilder(caption="Media group caption")
+
+    # Add photo
+    # media_group.add_photo(media=photo1)
+    media_group.add(type="photo", media=photo1)
+    # media_group.add_photo(media=photo2)
+    # media_group.add_photo(media=photo3)
+    # media_group.add(type="video", media=FSInputFile("/media/videos/video.webm"))
     await message.reply_media_group(media_group)
